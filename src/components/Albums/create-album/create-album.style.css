@@ -1,0 +1,31 @@
+.createAlbumContainer {
+  background-color: rgb(224, 216, 197);
+  width: 300px;
+  margin: 0 auto;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+.createAlbumForm {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.createAlbumForm > p {
+  margin: 0;
+  padding: 5px 0;
+  align-self: flex-start;
+}
+
+.createAlbumForm > p.error {
+  color: #9e1a1a;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+.createAlbumContainer > h1 {
+  color: white;
+}
