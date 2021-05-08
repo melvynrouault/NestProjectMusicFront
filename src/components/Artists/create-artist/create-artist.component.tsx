@@ -1,11 +1,11 @@
 import { FunctionComponent, useState } from 'react';
 import './create-artist.style.css';
 
-type Props = {
-  onAddArtist: (name: string) => void;
-}
+// type Props = {
+//   onAddArtist: (name: string) => void;
+// }
 
-const CreateArtistComponent: FunctionComponent<Props> = (props: Props) => {
+const CreateArtistComponent: FunctionComponent = () => {
   const [name, setName] = useState('');
   const [isBand, setIsBand] = useState(false);
   
@@ -31,7 +31,6 @@ const CreateArtistComponent: FunctionComponent<Props> = (props: Props) => {
     }
 
     if (valid) {
-      props.onAddArtist(name);
       setName('');
     }
   }

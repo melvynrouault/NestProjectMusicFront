@@ -1,9 +1,9 @@
-import React, { Fragment, useState } from 'react';
+// import React, { Fragment, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import ItemComponent from './components/item/item.component';
 import NavbarComponent from './components/navbar/navbar.component';
-import AdminComponent from './components/admin/admin.component';
+import AdminComponent from './components/admin/Dashboard/dashboard.component';
 import ListAlbumsComponent from './components/Albums/list-albums/list-albums.component';
 import ListArtistsComponent from './components/Artists/list-artist/list-artists.component';
 

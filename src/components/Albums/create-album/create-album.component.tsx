@@ -1,11 +1,11 @@
 import { FunctionComponent, useState } from 'react';
 import './create-album.style.css';
 
-type Props = {
-  onAddAlbum: (title: string, year: string, cover: string) => void;
-}
+// type Props = {
+//   onAddAlbum: (title: string, year: string, cover: string) => void;
+// }
 
-const CreateAlbumComponent: FunctionComponent<Props> = (props: Props) => {
+const CreateAlbumComponent: FunctionComponent = () => {
   const [title, setTitle] = useState('');
   const [year, setYear] = useState('');
   const [cover, setCover] = useState('');
@@ -49,7 +49,7 @@ const CreateAlbumComponent: FunctionComponent<Props> = (props: Props) => {
     }
     
     if (valid) {
-      props.onAddAlbum(title, year, cover);
+      // props.onAddAlbum(title, year, cover);
       setTitle('');
       setYear('');
       setCover('');

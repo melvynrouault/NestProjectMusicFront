@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, ReactNode, useState } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import './list-albums.style.css';
 
 type IListAlbumsProps = {
