@@ -10,9 +10,8 @@ const axios = require('axios');
 const LoginComponent: FunctionComponent = () => {
 
 
-  const [mail, setMail] = useState<string>();
-  const [password, setPassword] = useState<string>();
-  const [token, setToken] = useState<string>();
+  const [mail, setMail] = useState('');
+  const [password, setPassword] = useState<string>('');
 
   function onMailChanged(event: React.ChangeEvent<HTMLInputElement>): void {
     setMail(event.target.value);
@@ -23,21 +22,16 @@ const LoginComponent: FunctionComponent = () => {
   
   async function onSubmit() {
     
-    console.log(mail);
-    console.log(password);
-    const token = await axios.post('http://localhost:3001/user/signin', {
-      mail,
-      password,
-    });
+    let data = { mail, password };
+    await axios.post('http://localhost:3001/user/signin', data)
+    .then((response: any) => localStorage.setItem('userToken', response.data.accessToken))
+    .catch();
 
-    setToken(token);
-
-    console.log(token);
   }
 
-  useEffect(() => {
-    onSubmit();
-  }, []);
+  // useEffect(() => {
+
+  // }, []);
 
   return (
     <div className="login-wrapper">
@@ -52,7 +46,7 @@ const LoginComponent: FunctionComponent = () => {
           <input type="password" value={password} onChange={ onPasswordChanged }/>
         </label>
         <div>
-          <button type="submit">Submit</button>
+          <button type="submit" onClick={() => onSubmit()}>Submit</button>
         </div>
       </form>
     </div>

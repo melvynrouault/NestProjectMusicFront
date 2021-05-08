@@ -2,10 +2,13 @@ import React, { FunctionComponent, useEffect, ReactNode, useState } from 'react'
 import LoginComponent from './Login/login.component';
 
 const AdminComponent: FunctionComponent = () => {
-  const token = '';
+  // let token = '';
+  const [token, setToken] = useState<string | null>();
+
   
   useEffect(() => {
-
+    let userToken = localStorage.getItem('userToken');
+    setToken(userToken);
   }, []);
 
   if(!token) {
